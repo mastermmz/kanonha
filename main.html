@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly Schedule</title>
+  <link rel="stylesheet" href="./styles.css"> <!-- فایل CSS -->
+</head>
+<body>
+  <h1>Weekly Schedule</h1>
+  <div class="days">
+    <button onclick="loadSchedule('شنبه')">    شنبه </button>
+    <button onclick="loadSchedule('یک‌‌شنبه')">  یک‌‌شنبه </button>
+    <button onclick="loadSchedule('دوشنبه')">  دوشنبه  </button>
+    <button onclick="loadSchedule('سه‌شنبه')">  سه‌شنبه </button>
+    <button onclick="loadSchedule('چهارشنبه')">چهارشنبه </button>
+    <button onclick="loadSchedule('پنج‌شنبه' )">پنج‌شنبه </button>
+    <button onclick="loadSchedule('جمعه')">    جمعه </button>
+  </div>
+  <div class="schedule" id="schedule">
+    <h2>Classes</h2>
+    <div id="class-list">
+      <p>Select a day to see the schedule.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script> <!-- فایل جاوااسکریپت -->
+</body>
+</html>
+
