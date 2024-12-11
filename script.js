@@ -1,34 +1,50 @@
- async function loadSchedule(day) {
+const scheduleData = {
+    "شنبه": [
+      { "time": "08:00 - 09:30", "class": "دوبله" , "teacher": "محمد محمدزاده"},
+    ],
 
-  let scheduleData = {};
+    "یک‌‌شنبه": [
+    ],
 
-const response = await fetch('https://mastermmz.github.io/kanonha_api/data.json');
-const data = await response.json();
-console.log("HI");
-console.log(data);
+    "دوشنبه": [
 
-  console.log("H1");
-  scheduleData = data;
-  console.log(scheduleData);
-  const classList = document.getElementById('class-list');
-  classList.innerHTML = ''; 
+    ],
 
-  console.log("H2");
+    "سه‌شنبه": [
+        { "time": "12:00 - 14:00", "class": "داستان نویسی" , "teacher": "محمد محمدزاده"},
+        { "time": "15:30 - 17:00", "class": "دوبله" , "teacher": "محمد محمدزاده"},
 
-  const classes = scheduleData[day];
-  console.log(classes);
-  if (classes.length === 0) {
-    classList.innerHTML = `<p>No classes available for ${day}.</p>`;
-    return;
+    ],
+
+    "چهارشنبه": [
+        { "time": "12:00 - 14:00", "class": "گویندگی" , "teacher": "بهنام صادقی"},
+
+    ],
+    "پنج‌شنبه": [
+        { "time": "12:00 - 14:00", "class": "داستان نویسی" , "teacher": "محمد محمدزاده"},
+        { "time": "15:30 - 17:00", "class": "گویندگی" , "teacher": "بهنام صادقی"},
+
+    ],
+    "جمعه": [
+
+    ]
+  };
+  
+  function loadSchedule(day) {
+    const classList = document.getElementById('class-list');
+    classList.innerHTML = ''; 
+  
+    const classes = scheduleData[day];
+    if (classes.length === 0) {
+      classList.innerHTML = `<p>No classes available for ${day}.</p>`;
+      return;
+    }
+  
+    // نمایش کلاس‌ها
+    classes.forEach((item) => {
+      const classItem = document.createElement('div');
+      classItem.classList.add('class-item');
+      classItem.innerHTML = `<span>${item.time}</span> <span>${item.class}</span> <span>${item.teacher}</span>`;
+      classList.appendChild(classItem);
+    });
   }
-
-  console.log("H3");
-
-  classes.forEach((item) => {
-    const classItem = document.createElement('div');
-    classItem.classList.add('class-item');
-    classItem.innerHTML = `<span>${item.time}</span> <span>${item.class}</span> <span>${item.teacher}</span>`;
-    classList.appendChild(classItem);
-  });
-}
-
