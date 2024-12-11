@@ -36,7 +36,7 @@ const scheduleData = {
   
     const classes = scheduleData[day];
     if (classes.length === 0) {
-      classList.innerHTML = `<p> واسه امروز کلاسی ثبت نشده(اگر کلاسی میخوای امروز باشه بهمون خبر بده) </p>`;
+      classList.innerHTML = `<p> واسه امروز کلاسی ثبت نشده(اگر میخوای کلاسی امروز باشه بهمون خبر بده) </p>`;
       return;
     }
   
